@@ -51,3 +51,6 @@ pygame.draw.rect(windowSurface, RED, (textRect.left - 20, textRect.top - 20, tex
 pixArray = pygame.pixelArray(windowSurface)
 pixArray[480][380] = BLUE
 del pixArray
+
+# Draw the text onto the surface.
+windowSurface.blit(text, textRect)
