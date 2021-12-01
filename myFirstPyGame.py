@@ -25,7 +25,7 @@ basicFont = pygame.font.SysFont(None, 48)
 text = basicFont.render('Hello, world!', True, WHITE, BLUE)
 textRect = text.get_rect() 
 textRect.centerx = windowSurface.get_rect().centerx
-textRect.centerx = windowSurface.get_rect().centery
+textRect.centery = windowSurface.get_rect().centery
 
 #Fill background color.
 windowSurface.fill(PUKEGREEN)
@@ -48,9 +48,19 @@ pygame.draw.ellipse(windowSurface, RED, (300, 250, 40, 80), 1)
 pygame.draw.rect(windowSurface, RED, (textRect.left - 20, textRect.top - 20, textRect.width +40, textRect.height + 40))
 
 # Create Pixel Array
-pixArray = pygame.pixelArray(windowSurface)
+pixArray = pygame.PixelArray(windowSurface)
 pixArray[480][380] = BLUE
 del pixArray
 
 # Draw the text onto the surface.
 windowSurface.blit(text, textRect)
+
+# Update Pygame Display
+pygame.display.update()
+
+# Run game loop.
+while True:
+    for event in pygame.event.get():
+        if event.type == QUIT:
+            pygame.quit()
+            sys.exit()
