@@ -1,4 +1,4 @@
-# My First PyGame, Linda Cooper, 11/29/21 2:02pm, v0.6
+# My First PyGame, Linda Cooper, 11/29/21 2:23pm, v0.7
 
 import pygame, sys
 from pygame.locals import * 
