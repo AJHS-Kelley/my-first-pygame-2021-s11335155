@@ -1,4 +1,4 @@
-# Simple Animation with PyGame, Linda Cooper, 12/09/21, 2:31PM, v0.7
+# Simple Animation with PyGame, Linda Cooper, 12/09/21, 2:31PM, v0.8
 
 from _typeshed import ReadableBuffer
 import pygame, sys, time
@@ -82,4 +82,9 @@ while True:
                     b['dir'] = DOWNLEFT
                 if b['dir'] == UPRIGHT:
                     b['dir'] = UPLEFT
-                
+        # Draw the box onto the game surface
+        pygame.draw.rect(windowSurface, b['color'], b['rect'])
+
+    # Draw the window to the screen.
+    pygame.display.update()
+    time.sleep(0.02)
